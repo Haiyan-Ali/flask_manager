@@ -1,0 +1,58 @@
+{% extends 'base.html'%}
+
+{% block title %} Login Logs{% endblock title %}
+
+{% block style %}
+<link rel="stylesheet" href="/static/log_list.css"> 
+{% endblock style %}
+
+
+{% block body %}
+
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">
+                <img src="/static/icon.png" alt="Logo" width="35" height="35" class="d-inline-block align-text-top">
+                My Manager
+            </a>
+            <a id="all_a" href="/admin">← Admin</a>
+        </div>
+    </nav>
+
+    <br>
+    <div style="text-align: center; color:white; font-family: 'Roboto Condensed', sans-serif;">
+        <h2>Log in Logs</h2>
+    </div>
+    <br>
+    <div class="container">
+        <table class="table table-dark">
+            <thead>
+                <tr>
+                    <th scope="col">Sno.</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Data</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in data %}
+                <tr>
+                    <th scope="row">{{i[0]}}</th>
+                    <td>{{i[1]}}</td>
+                    <td>{{i[2]}}</td>
+                </tr>
+                {% endfor %}
+
+            </tbody>
+        </table>
+
+        <a href="/clear_login_logs"  id="clear_log_btn">Clear Login Log</a>
+    </div>
+
+
+
+
+    <br>
+
+
+
+    {% endblock body %}

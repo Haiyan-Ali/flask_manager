@@ -1,0 +1,117 @@
+{% extends 'base.html'%}
+
+{% block title %} Admin{% endblock title %}
+
+{% block style %}
+<link rel="stylesheet" href="/static/admin.css"> 
+{% endblock style %}
+
+
+{% block body %}
+
+
+
+
+<nav class="navbar navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">
+      <img src="/static/icon.png" alt="Logo" width="35" height="35"
+        class="d-inline-block align-text-top">
+      My Manager
+    </a>
+    <a id="all_a" href="/logout">Logout</a>
+  </div>
+</nav>
+<br>
+
+{% for i in error %}
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+  <strong>Note:</strong> {{i}}.
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{% endfor %}
+
+
+
+<br>
+
+<div class="container">
+  <form class="get_form" action="/getpaswd" method="post">
+    <h2>Get Password</h2>
+    <input class="ad_inp" type="text" name="value" placeholder="column:value" required>
+    <button class="ad_btn">GET</button>
+    <br>
+    {% for i in get %}
+    <div class="get_values">Uid= {{i[0]}} </div>
+    <div class="get_values">Name= {{i[1]}}</div>
+    <div class="get_values" id="get_values_paswd_btn">Password= <span onclick="bufferText()">{{i[2]}}</span></div>
+    <div class="d-none get_values_paswd">{{i[2]}}</div>
+    <div class="get_values">Description= {{i[3]}}</div>
+    {% endfor %}
+  </form>
+  <br>
+  <br>
+
+  <form class="get_form" action="/delpaswd" method="post">
+    <h2>Delete Password</h2>
+    <input class="ad_inp" type="text" name="value" placeholder="Uid" required>
+    <button type="submit" class="ad_btn">DELETE</button>
+  </form>
+  <br>
+  <br>
+
+
+
+  <form class="get_form" action="/addpaswd" method="post">
+    <h2>Add Password</h2>
+    <input class="ad_inp" type="text" name="name" placeholder="Name" required>
+    <input class="ad_inp mb-0" id="aut_pas_inp" type="text" name="passwd" placeholder="Password" required>
+    <div class="aut_pas_btn" id="aut_pas_btn">Strong Password:( jkgkafgkalsakfhkls )</div>
+    <input class="ad_inp" type="text" name="desc" placeholder="Description" required>
+    <button class="ad_btn">ADD</button>
+  </form>
+
+  <br>
+  <br>
+  <button class="e_Btn" data-bs-toggle="modal" data-bs-target="#e_modal"></button>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="e_modal" tabindex="-1" aria-labelledby="e_modal_Label" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content" style="background-color:#212529 ;">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="e_modal_Label">Hidden</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <a id="all_a" href="/all_pass">All Password</a>
+        <br>
+        <br>
+        <a id="all_a" href="/login_logs">Login Logs</a>
+        <br>
+        <br>
+        <a id="all_a" href="/down_pas_db">Download Passwords DB</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% endblock body %}
+
+
+{% block script %}
+<link rel="stylesheet" href="/static/admin.css"> 
+{% endblock script %}

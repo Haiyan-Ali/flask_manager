@@ -1,0 +1,83 @@
+{% extends 'base.html'%}
+
+{% block title %} Admin{% endblock title %}
+
+{% block style %}
+<link rel="stylesheet" href="/static/login.css">
+{% endblock style %}
+
+
+{% block body %}
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+
+</style>
+
+</head>
+
+<body>
+
+
+    <div class="container logindiv">
+        <h1 style="color: white; font-weight: 500; font-family: 'Roboto Condensed', sans-serif;">Well come Haiyan</h1>
+        <br>
+        <p class="login_error d-noned" id="login_error">{{error[0]}}</p>
+        <br>
+
+        <form action="/admin" method="post">
+            <div class="input-container">
+                <i class="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor"
+                        class="bi bi-person-fill" viewBox="0 0 16 16">
+                        <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                    </svg></i>
+                <input type="text" placeholder="Username" name="name" required>
+            </div>
+
+
+            <div class="input-container">
+                <i class="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor"
+                        class="bi bi-lock-fill" viewBox="0 0 16 16">
+                        <path
+                            d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z" />
+                    </svg>
+                </i>
+                <input type="Password" placeholder="Password" name="password" required>
+            </div>
+            <br>
+            <input type="text" name="in" class="d-none" id="sauklaf">
+
+            <button class="login_btn" type="submit">LOGIN</button>
+
+        </form>
+
+        <div class="for_div"> <a href="/forget">Forget Password</a> </div>
+
+
+    </div>
+    <div id="log"></div>
+
+
+
+
+
+
+
+    {% endblock body %}
+
+
+    {% block script %}
+    <script src="/static/login.js"></script>
+    {% endblock script %}
