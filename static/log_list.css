@@ -1,0 +1,22 @@
+body {
+    background-color: #12181B;
+}
+
+.container-fluid a {
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+th {
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+#clear_log_btn,
+#all_a {
+    color: white;
+    transition: all ease 0.3s;
+}
+
+#clear_log_btn:hover,
+#all_a:hover {
+    color: rgb(114, 114, 114);
+}

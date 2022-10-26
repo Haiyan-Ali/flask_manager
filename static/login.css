@@ -1,0 +1,93 @@
+body {
+    background-color: #12181B;
+}
+
+.logindiv {
+    background-color: #2A2E35;
+    margin-top: 20vh;
+    max-width: 700px;
+    padding: 30px;
+    /* justify-content: center; */
+    text-align: center;
+    border-radius: 10px;
+}
+
+.input-container {
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    margin-bottom: 35px;
+    justify-content: center;
+}
+
+input {
+    width: 80%;
+    height: 45px;
+    background: #454E56;
+    border: none;
+    outline: none;
+    border-radius: 0 20px 20px 0;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.icon {
+    padding: 8px;
+    background: #454E56;
+    color: black;
+    min-width: 50px;
+    text-align: center;
+    border-radius: 20px 0 0 20px;
+}
+
+.login_btn {
+    border: none;
+    width: 87%;
+    height: 45px;
+    background-color: black;
+    font-size: 25px;
+    color: white;
+    border-radius: 25px;
+    letter-spacing: 2px;
+    font-weight: 500;
+    transition: 0.5s all ease;
+}
+
+.login_btn:hover {
+    background-color: rgb(7, 6, 6);
+}
+
+.login_error {
+    color: red;
+    font-weight: 300;
+}
+
+.for_div {
+    margin-top: 10%;
+    height: 20px;
+    text-align: end;
+    padding: 0 40px;
+    font-weight: 500;
+}
+
+.for_div a {
+    color: black;
+}
+
+.for_div a:hover {
+    color: rgb(7, 6, 6);
+}
+
+
+@media(max-width: 600px) {
+    .logindiv {
+        margin-top: 12vh;
+        padding: 20px;
+    }
+
+    .for_div {
+        padding: 0;
+    }
+
+
+}
